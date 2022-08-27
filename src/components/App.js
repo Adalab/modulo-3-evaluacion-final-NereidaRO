@@ -4,16 +4,40 @@ import "../styles/App.scss";
 import { Link, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ls from "../services/localStorage";
+import getFromApi from "../services/api.js";
 //Componentes
+import CharacterList from "./CharacterList";
+import Filters from "./Filters";
+import CharacterDetail from "./CharacterDetail";
 
 function App() {
   //VARIABLES DE ESTADO
+  const [characters, setCharacters] = useState([]);
+
   //FUNCIONES AUXILIARES
-  //EVENTOS
+
+  useEffect(() => {
+    getFromApi().then((dataFromApi) => {
+      console.log(dataFromApi);
+      setCharacters(dataFromApi);
+    });
+  }, []);
+  //PROVENIENTES DE LIFTING
   //RETURN
   return (
     <div className="App">
-      <h1>Hola mundo</h1>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Filters />
+              <CharacterList characters={characters} />
+            </>
+          }
+        />
+        <Route path="/detail" element={<CharacterDetail />} />
+      </Routes>
     </div>
   );
 }
