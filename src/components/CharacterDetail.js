@@ -11,9 +11,9 @@ function CharacterDetail(props) {
     }
   };
 
-  //species a castellano
+  //species a castellano?
 
-  //gender a castellano
+  //gender a castellano?
 
   //placeholder de la imagen
 
@@ -41,11 +41,11 @@ function CharacterDetail(props) {
     <section>
       {chooseImage()}
       <article>
-        <p>Nombre: {props.characters.name}</p>
+        <p>Name: {props.characters.name}</p>
         {isAlive()}
-        <p>Especie: {props.characters.species}</p>
-        <p>Género: {props.characters.gender}</p>
-        <p>Casa: {props.characters.house}</p>
+        <p>Species: {props.characters.species}</p>
+        <p>Gender: {props.characters.gender}</p>
+        <p>House: {props.characters.house}</p>
       </article>
     </section>
   );

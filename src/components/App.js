@@ -26,21 +26,10 @@ function App() {
   //RETURN
   return (
     <div className="App">
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              {/*<Filters />*/}
-              <CharacterList characters={characters} />
-            </>
-          }
-        />
-        <Route
-          path="/detail"
-          element={<CharacterDetail characters={characters} />}
-        />
-      </Routes>
+      <form>
+        <Filters characters={characters} />
+      </form>
+      <CharacterList characters={characters} />
     </div>
   );
 }
