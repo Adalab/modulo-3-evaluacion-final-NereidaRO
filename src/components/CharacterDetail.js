@@ -1,4 +1,4 @@
-import "../images/doggypottermiriam.png";
+import placeholder from "../images/enplaceholder.png";
 
 function CharacterDetail(props) {
   //transformar true/false en vivo/muerto
@@ -15,13 +15,31 @@ function CharacterDetail(props) {
 
   //gender a castellano
 
+  //placeholder de la imagen
+
+  const chooseImage = () => {
+    if (props.characters.image === "") {
+      return (
+        <img
+          src={placeholder}
+          alt={props.characters.name}
+          title={props.characters.name}
+        />
+      );
+    } else {
+      return (
+        <img
+          src={props.characters.image}
+          alt={props.characters.name}
+          title={props.characters.name}
+        />
+      );
+    }
+  };
+
   return (
     <section>
-      <img
-        src={props.characters.image}
-        alt={props.characters.name}
-        title={props.characters.name}
-      />
+      {chooseImage()}
       <article>
         <p>Nombre: {props.characters.name}</p>
         {isAlive()}
@@ -34,9 +52,9 @@ function CharacterDetail(props) {
 }
 
 CharacterDetail.defaultProps = {
-  image: "../images/doggypottermiriam.png",
-  name: "Doggy Potter",
-  species: "dog",
+  image: "../images/enplaceholder.png",
+  name: "No Name",
+  species: "No Species",
 };
 
 export default CharacterDetail;

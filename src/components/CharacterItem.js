@@ -1,14 +1,32 @@
-import "../images/doggypottermiriam.png";
+import placeholder from "../images/enplaceholder.png";
 
 function CharacterItem(props) {
   console.log(props);
+  //placeholder img
+
+  const chooseImage = () => {
+    if (props.characters.image === "") {
+      return (
+        <img
+          src={placeholder}
+          alt={props.characters.name}
+          title={props.characters.name}
+        />
+      );
+    } else {
+      return (
+        <img
+          src={props.characters.image}
+          alt={props.characters.name}
+          title={props.characters.name}
+        />
+      );
+    }
+  };
+
   return (
     <li>
-      <img
-        src={props.characters.image}
-        alt={props.characters.name}
-        title={props.characters.name}
-      />
+      {chooseImage()}
       <p>{props.characters.name}</p>
       <p>{props.characters.species}</p>
     </li>
@@ -18,9 +36,9 @@ function CharacterItem(props) {
 //acuérdate de la parte variable de Link, uuid?
 
 CharacterItem.defaultProps = {
-  image: "../images/doggypottermiriam.png",
-  name: "Doggy Potter",
-  species: "dog",
+  image: "../images/enplaceholder.png",
+  name: "No Name",
+  species: "No Species",
 };
 
 export default CharacterItem;
