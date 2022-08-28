@@ -13,6 +13,8 @@ import CharacterDetail from "./CharacterDetail";
 function App() {
   //VARIABLES DE ESTADO
   const [characters, setCharacters] = useState([]);
+  const [houseFilter, setHouseFilter] = useState("Gryffindor");
+  //no coge el valor que le pasa el filtro :(
 
   //FUNCIONES AUXILIARES
 
@@ -22,12 +24,27 @@ function App() {
       setCharacters(dataFromApi);
     });
   }, []);
-  //PROVENIENTES DE LIFTING
-  //RETURN
+
+  //RELACIONADAS CON LIFTING
+
+  const handleFilterByHouse = (value) => {
+    setHouseFilter(value);
+  };
+
+  //RETURN Y RUTAS
+
+  //función para filtrar y pasárselo a CharacterList
+
+  //RETURN Y RUTAS
+
   return (
     <div className="App">
       <form>
-        <Filters characters={characters} />
+        <Filters
+          characters={characters}
+          houseFilter={houseFilter}
+          handleFilterByHouse={handleFilterByHouse}
+        />
       </form>
       <CharacterList characters={characters} />
     </div>
