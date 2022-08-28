@@ -1,4 +1,4 @@
-import FilterByName from "./FilterByName.js";
+/*import FilterByName from "./FilterByName.js";
 import FilterByHouse from "./FilterByHouse.js";
 
 function Filters() {
@@ -8,4 +8,4 @@ function Filters() {
   </form>;
 }
 
-export default Filters;
+export default Filters;*/

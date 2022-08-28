@@ -1,14 +1,21 @@
 import "../images/doggypottermiriam.png";
 
-function CharacterItem({ image, name, species }) {
+function CharacterItem(props) {
+  console.log(props);
   return (
     <li>
-      <img src={image} alt={name} title={name} />
-      <p>{name}</p>
-      <p>{species}</p>
+      <img
+        src={props.characters.image}
+        alt={props.characters.name}
+        title={props.characters.name}
+      />
+      <p>{props.characters.name}</p>
+      <p>{props.characters.species}</p>
     </li>
   );
 }
+
+//acuérdate de la parte variable de Link, uuid?
 
 CharacterItem.defaultProps = {
   image: "../images/doggypottermiriam.png",

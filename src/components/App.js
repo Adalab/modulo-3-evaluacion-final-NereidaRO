@@ -1,7 +1,7 @@
 //Estilos (solo 1)
 import "../styles/App.scss";
 //Librerías, datos y LS
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ls from "../services/localStorage";
 import getFromApi from "../services/api.js";
@@ -31,12 +31,15 @@ function App() {
           path="/"
           element={
             <>
-              <Filters />
+              {/*<Filters />*/}
               <CharacterList characters={characters} />
             </>
           }
         />
-        <Route path="/detail" element={<CharacterDetail />} />
+        <Route
+          path="/detail"
+          element={<CharacterDetail characters={characters} />}
+        />
       </Routes>
     </div>
   );
