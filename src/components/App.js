@@ -31,22 +31,37 @@ function App() {
     setHouseFilter(value);
   };
 
-  //RETURN Y RUTAS
+  //APLICACIÓN DE FILTROS
 
-  //función para filtrar y pasárselo a CharacterList
+  const filteredCharacters = characters.filter((oneCharacter) => {
+    return houseFilter === "all" ? true : oneCharacter.house === houseFilter;
+  });
 
   //RETURN Y RUTAS
 
   return (
     <div className="App">
-      <form>
-        <Filters
-          characters={characters}
-          houseFilter={houseFilter}
-          handleFilterByHouse={handleFilterByHouse}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <form>
+                <Filters
+                  characters={characters}
+                  houseFilter={houseFilter}
+                  handleFilterByHouse={handleFilterByHouse}
+                />
+              </form>
+              <CharacterList characters={filteredCharacters} />
+            </>
+          }
         />
-      </form>
-      <CharacterList characters={characters} />
+        <Route
+          path="/detail/:id"
+          element={<CharacterDetail characters={characters} />}
+        />
+      </Routes>
     </div>
   );
 }

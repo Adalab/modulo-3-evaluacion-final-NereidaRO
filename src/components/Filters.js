@@ -5,12 +5,12 @@ function Filters(props) {
   console.log(props);
   return (
     <>
-      <FilterByName
+      <FilterByName characters={props.characters} />
+      <FilterByHouse
         characters={props.characters}
         houseFilter={props.houseFilter}
         handleFilterByHouse={props.handleFilterByHouse}
       />
-      <FilterByHouse characters={props.characters} />
     </>
   );
 }
