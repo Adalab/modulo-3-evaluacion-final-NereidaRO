@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ls from "../services/localStorage";
 import getFromApi from "../services/api.js";
+import placeholder from "../images/enplaceholder.png";
 //Componentes
 import CharacterList from "./CharacterList";
 import Filters from "./Filters";
@@ -44,7 +45,9 @@ function App() {
     .filter((oneCharacter) => {
       if (textFilter.length === 0) {
         return true;
-      } else {
+      } else if (
+        oneCharacter.name.toLowerCase().includes(textFilter.toLowerCase())
+      ) {
         return oneCharacter.name
           .toLowerCase()
           .includes(textFilter.toLowerCase());
