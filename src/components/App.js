@@ -1,7 +1,7 @@
 //Estilos (solo 1)
 import "../styles/App.scss";
 //Librerías, datos y LS
-import { Route, Routes } from "react-router-dom";
+import { matchPath, Route, Routes, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ls from "../services/localStorage";
 import getFromApi from "../services/api.js";
@@ -18,6 +18,8 @@ function App() {
 
   //FUNCIONES AUXILIARES
 
+  //fetch
+
   useEffect(() => {
     getFromApi().then((dataFromApi) => {
       console.log(dataFromApi);
@@ -25,13 +27,18 @@ function App() {
     });
   }, []);
 
-  //obtener el id del usuario clicleado
-  /* const { pathname } = useLocation();
-    console.log(pathname);
-    const dataPath = matchPath("/user/:userId", pathname);
-  
-    const userId = dataPath !== null ? dataPath.params.userId : null;
-    const userFound = dataUsers.find(user => { return user.id === userId });*/
+  //obtener el id del personaje clicleado
+  const { pathname } = useLocation();
+  console.log(pathname);
+  const dataPath = matchPath("/detail/:id", pathname);
+
+  const characterId = dataPath !== null ? dataPath.params.id : null;
+  const characterFound = characters.find((oneCharacter) => {
+    return characterId === oneCharacter.id;
+  });
+
+  /*búscame en el listado completo el personaje que tenga el mismo id que characterId
+  donde characterId es el id del personaje clicado por la usuaria (el que sale en la ruta)*/
 
   //RELACIONADAS CON LIFTING
 
@@ -83,7 +90,7 @@ function App() {
         />
         <Route
           path="/detail/:id"
-          element={<CharacterDetail characters={characters} />}
+          element={<CharacterDetail characterFound={characterFound} />}
         />
       </Routes>
     </div>

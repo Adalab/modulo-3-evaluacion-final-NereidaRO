@@ -2,7 +2,7 @@ import placeholder from "../images/enplaceholder.png";
 import chooseImage from "../services/chooseImage";
 
 function CharacterDetail(props) {
-  console.log(props.characters);
+  console.log(props.characterFound);
   //transformar true/false en vivo/muerto
 
   const isAlive = (status) => {
@@ -17,13 +17,13 @@ function CharacterDetail(props) {
 
   return (
     <section>
-      {chooseImage(props.characters)}
+      {chooseImage(props.characterFound)}
       <article>
-        <p>Name: {props.characters.name}</p>
+        <p>Name: {props.characterFound.name}</p>
         {isAlive()}
-        <p>Species: {props.characters.species}</p>
-        <p>Gender: {props.characters.gender}</p>
-        <p>House: {props.characters.house}</p>
+        <p>Species: {props.characterFound.species}</p>
+        <p>Gender: {props.characterFound.gender}</p>
+        <p>House: {props.characterFound.house}</p>
       </article>
     </section>
   );
