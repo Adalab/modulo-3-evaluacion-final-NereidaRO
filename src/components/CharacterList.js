@@ -10,8 +10,8 @@ function CharacterList(props) {
     if (props.characters.length === 0) {
       return <p>Without coincidences!</p>;
     } else {
-      return props.characters.map((item, index) => {
-        return <CharacterItem key={index} characters={item} />;
+      return props.characters.map((item) => {
+        return <CharacterItem key={props.characters.id} characters={item} />;
       });
     }
   };

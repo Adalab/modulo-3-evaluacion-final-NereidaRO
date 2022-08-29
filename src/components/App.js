@@ -26,6 +26,14 @@ function App() {
     });
   }, []);
 
+  //obtener el id del usuario clicleado
+  /* const { pathname } = useLocation();
+    console.log(pathname);
+    const dataPath = matchPath("/user/:userId", pathname);
+  
+    const userId = dataPath !== null ? dataPath.params.userId : null;
+    const userFound = dataUsers.find(user => { return user.id === userId });*/
+
   //RELACIONADAS CON LIFTING
 
   const handleFilterByHouse = (value) => {
