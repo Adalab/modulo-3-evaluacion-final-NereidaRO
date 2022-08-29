@@ -3,11 +3,11 @@ function FilterByName(props) {
     return props.handleFilterByName(ev.target.value);
   };
 
-  /* const handleOnKeyPress = (ev) => {
+  const handleOnKeyPress = (ev) => {
     if (ev.charCode === 13) {
       ev.preventDefault();
     }
-  };*/
+  };
 
   //keyUp 13 = tecla enter
 
@@ -20,7 +20,7 @@ function FilterByName(props) {
         id="name"
         value={props.textFilter}
         onChange={handleOnChange}
-        // onKeyPress={handleOnKeyPress}
+        onKeyPress={handleOnKeyPress}
       />
     </>
   );
