@@ -11,6 +11,7 @@ function CharacterList(props) {
       return <p>Without coincidences!</p>;
     } else {
       return props.characters.map((item) => {
+        console.log(item.id);
         return <CharacterItem key={item.id} characters={item} />;
       });
     }

@@ -6,7 +6,7 @@ const getFromApi = () => {
     .then((data) => {
       const dataClean = data.map((character) => {
         return {
-          id: uuid(),
+          id: `${character.dateOfBirth}${uuid()}`,
           name: character.name,
           species: character.species,
           gender: character.gender,
