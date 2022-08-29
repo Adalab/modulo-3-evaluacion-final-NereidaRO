@@ -1,32 +1,14 @@
 import placeholder from "../images/enplaceholder.png";
+import chooseImage from "../services/chooseImage";
 
 function CharacterItem(props) {
   console.log(props);
-  //placeholder img
 
-  const chooseImage = () => {
-    if (props.characters.image === "") {
-      return (
-        <img
-          src={placeholder}
-          alt={props.characters.name}
-          title={props.characters.name}
-        />
-      );
-    } else {
-      return (
-        <img
-          src={props.characters.image}
-          alt={props.characters.name}
-          title={props.characters.name}
-        />
-      );
-    }
-  };
+  //placeholder img => función importada de servicio porque se repite
 
   return (
     <li>
-      {chooseImage()}
+      {chooseImage(props.characters)}
       <p>{props.characters.name}</p>
       <p>{props.characters.species}</p>
     </li>
@@ -36,7 +18,7 @@ function CharacterItem(props) {
 //acuérdate de la parte variable de Link, uuid?
 
 CharacterItem.defaultProps = {
-  image: "../images/enplaceholder.png",
+  image: { placeholder },
   name: "No Name",
   species: "No Species",
 };

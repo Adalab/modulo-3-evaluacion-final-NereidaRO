@@ -45,9 +45,7 @@ function App() {
     .filter((oneCharacter) => {
       if (textFilter.length === 0) {
         return true;
-      } else if (
-        oneCharacter.name.toLowerCase().includes(textFilter.toLowerCase())
-      ) {
+      } else {
         return oneCharacter.name
           .toLowerCase()
           .includes(textFilter.toLowerCase());

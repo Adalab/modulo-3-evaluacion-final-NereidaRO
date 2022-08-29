@@ -1,23 +1,21 @@
 import placeholder from "../images/enplaceholder.png";
 
-const chooseImage = (props, characters) => {
-  if (props.characters.image === "") {
+const chooseImage = (characters) => {
+  if (characters.image === "") {
     return (
-      <img
-        src={placeholder}
-        alt={props.characters.name}
-        title={props.characters.name}
-      />
+      <img src={placeholder} alt={characters.name} title={characters.name} />
     );
   } else {
     return (
       <img
-        src={props.characters.image}
-        alt={props.characters.name}
-        title={props.characters.name}
+        src={characters.image}
+        alt={characters.name}
+        title={characters.name}
       />
     );
   }
 };
+
+//aquí no se pone punto en los parámetros
 
 export default chooseImage;
