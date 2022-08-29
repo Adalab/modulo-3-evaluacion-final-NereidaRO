@@ -14,7 +14,7 @@ function App() {
   //VARIABLES DE ESTADO
   const [characters, setCharacters] = useState([]);
   const [houseFilter, setHouseFilter] = useState("Gryffindor");
-  //no coge el valor que le pasa el filtro :(
+  const [textFilter, setTextFilter] = useState("");
 
   //FUNCIONES AUXILIARES
 
@@ -31,11 +31,25 @@ function App() {
     setHouseFilter(value);
   };
 
+  const handleFilterByName = (value) => {
+    setTextFilter(value);
+  };
+
   //APLICACIÓN DE FILTROS
 
-  const filteredCharacters = characters.filter((oneCharacter) => {
-    return houseFilter === "all" ? true : oneCharacter.house === houseFilter;
-  });
+  const filteredCharacters = characters
+    .filter((oneCharacter) => {
+      return houseFilter === "All" ? true : oneCharacter.house === houseFilter;
+    })
+    .filter((oneCharacter) => {
+      if (textFilter.length === 0) {
+        return true;
+      } else {
+        return oneCharacter.name
+          .toLowerCase()
+          .includes(textFilter.toLowerCase());
+      }
+    });
 
   //RETURN Y RUTAS
 
@@ -51,6 +65,8 @@ function App() {
                   characters={characters}
                   houseFilter={houseFilter}
                   handleFilterByHouse={handleFilterByHouse}
+                  textFilter={textFilter}
+                  handleFilterByName={handleFilterByName}
                 />
               </form>
               <CharacterList characters={filteredCharacters} />
