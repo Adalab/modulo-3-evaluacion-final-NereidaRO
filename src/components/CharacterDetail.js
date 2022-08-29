@@ -2,6 +2,7 @@ import placeholder from "../images/enplaceholder.png";
 import chooseImage from "../services/chooseImage";
 
 function CharacterDetail(props) {
+  console.log(props.characters);
   //transformar true/false en vivo/muerto
 
   const isAlive = (status) => {

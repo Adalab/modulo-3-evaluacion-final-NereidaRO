@@ -1,5 +1,6 @@
 import placeholder from "../images/enplaceholder.png";
 import chooseImage from "../services/chooseImage";
+import { NavLink } from "react-router-dom";
 
 function CharacterItem(props) {
   console.log(props);
@@ -8,14 +9,16 @@ function CharacterItem(props) {
 
   return (
     <li>
-      {chooseImage(props.characters)}
-      <p>{props.characters.name}</p>
-      <p>{props.characters.species}</p>
+      <NavLink to={`/detail/${props.characters.id}`}>
+        {chooseImage(props.characters)}
+        <p>{props.characters.name}</p>
+        <p>{props.characters.species}</p>
+      </NavLink>
     </li>
   );
 }
 
-//acuérdate de la parte variable de Link, uuid?
+//acuérdate de la parte variable de Link
 
 CharacterItem.defaultProps = {
   image: { placeholder },
