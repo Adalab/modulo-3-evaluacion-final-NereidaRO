@@ -9,6 +9,7 @@ import getFromApi from "../services/api.js";
 import CharacterList from "./CharacterList";
 import Filters from "./Filters";
 import CharacterDetail from "./CharacterDetail";
+import ResetButton from "./ResetButton";
 
 function App() {
   //VARIABLES DE ESTADO
@@ -19,7 +20,6 @@ function App() {
   //FUNCIONES AUXILIARES
 
   //fetch
-
   useEffect(() => {
     getFromApi().then((dataFromApi) => {
       console.log(dataFromApi);
@@ -41,7 +41,6 @@ function App() {
   donde characterId es el id del personaje clicado por la usuaria (el que sale en la ruta)*/
 
   //RELACIONADAS CON LIFTING
-
   const handleFilterByHouse = (value) => {
     setHouseFilter(value);
   };
@@ -51,7 +50,6 @@ function App() {
   };
 
   //APLICACIÓN DE FILTROS
-
   const filteredCharacters = characters
     .filter((oneCharacter) => {
       return houseFilter === "All" ? true : oneCharacter.house === houseFilter;
@@ -67,7 +65,6 @@ function App() {
     });
 
   //RETURN Y RUTAS
-
   return (
     <div className="App">
       <Routes>
@@ -76,6 +73,10 @@ function App() {
           element={
             <>
               <form>
+                <ResetButton
+                  setHouseFilter={setHouseFilter}
+                  setTextFilter={setTextFilter}
+                />
                 <Filters
                   characters={characters}
                   houseFilter={houseFilter}
