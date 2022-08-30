@@ -28,9 +28,7 @@ function App() {
 
   //obtener el id del personaje clicleado
   const { pathname } = useLocation();
-  console.log(pathname);
   const dataPath = matchPath("/detail/:id", pathname);
-
   const characterId = dataPath !== null ? dataPath.params.id : null;
   const characterFound = characters.find((oneCharacter) => {
     return characterId === oneCharacter.id;
@@ -38,6 +36,15 @@ function App() {
 
   /*búscame en el listado completo el personaje que tenga el mismo id que characterId
   donde characterId es el id del personaje clicado por la usuaria (el que sale en la ruta)*/
+
+  //URL compartible
+  const getDetail = () => {
+    if (characterFound) {
+      return characterFound;
+    } else {
+      return {};
+    }
+  }; //no sale :(
 
   //RELACIONADAS CON LIFTING
   const handleFilterByHouse = (value) => {
@@ -99,7 +106,7 @@ function App() {
         />
         <Route
           path="/detail/:id"
-          element={<CharacterDetail characterFound={characterFound} />}
+          element={<CharacterDetail characterFound={getDetail()} />}
         />
       </Routes>
     </div>
