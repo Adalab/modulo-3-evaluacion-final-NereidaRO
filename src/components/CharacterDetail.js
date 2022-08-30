@@ -18,7 +18,7 @@ function CharacterDetail(props) {
   //placeholder de la imagen => función en servicios
 
   return (
-    <>
+    <div className="detail__wrapper">
       <NavLink className="detail__link" to="/">
         Back
       </NavLink>
@@ -34,7 +34,7 @@ function CharacterDetail(props) {
           <p className="detail__text">House: {props.characterFound.house}</p>
         </article>
       </section>
-    </>
+    </div>
   );
 }
 

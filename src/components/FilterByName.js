@@ -13,7 +13,7 @@ function FilterByName(props) {
   //keyUp 13 = tecla enter
 
   return (
-    <>
+    <div className="fbn__wrapper">
       <label className="fbn__label" htmlFor="name">
         Search by name:{" "}
       </label>
@@ -26,7 +26,7 @@ function FilterByName(props) {
         onChange={handleOnChange}
         onKeyPress={handleOnKeyPress}
       />
-    </>
+    </div>
   );
 }
 

@@ -6,9 +6,9 @@ function FilterByHouse(props) {
     return props.handleFilterByHouse(ev.target.value);
   };
   return (
-    <>
+    <div className="fbh__wrapper">
       <label className="fbh__label" htmlFor="house">
-        Choose a house:{" "}
+        Choose a house:
       </label>
       <select
         className="fbh__select"
@@ -23,7 +23,7 @@ function FilterByHouse(props) {
         <option value="Slytherin">Slytherin</option>
         <option value="All">All</option>
       </select>
-    </>
+    </div>
   );
 }
 

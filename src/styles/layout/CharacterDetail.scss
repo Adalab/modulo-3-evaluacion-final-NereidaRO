@@ -1,8 +1,35 @@
 @import "../core/global.scss";
 
 .detail{
+    &__wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__section{
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-detail;
+        margin-top: $central-padding;
+    }
     &__link{
-        color: grey;
+        color: $color-letter;
         text-decoration: none;
+        font-size: $subtitle-size;
+        margin-top: $central-padding ;
+    }
+
+    &__link:hover{
+        font-weight: bold;
+    }
+
+    &__text{
+        color: $color-letter;
+        padding: $central-padding;
+        font-size: $text-size;
     }
 }

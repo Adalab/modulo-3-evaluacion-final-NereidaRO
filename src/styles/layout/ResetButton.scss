@@ -1,1 +1,12 @@
 @import "../core/global.scss";
+
+.reset__button{
+    color: $color-letter;
+    font-size: $text-size;
+    font-weight: bold;
+    background-color: $color-body;
+    border: solid 2px $color-card;
+    border-radius: $radius;
+    width: 80px;
+    margin: $form-size;
+}
