@@ -3,7 +3,6 @@ import "../styles/App.scss";
 //Librerías, datos y LS
 import { matchPath, Route, Routes, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import ls from "../services/localStorage";
 import getFromApi from "../services/api.js";
 //Componentes
 import CharacterList from "./CharacterList";
@@ -49,7 +48,7 @@ function App() {
     setTextFilter(value);
   };
 
-  //APLICACIÓN DE FILTROS
+  //APLICACIÓN DE FILTROS Y ORDEN ALFABÉTICO
   const filteredCharacters = characters
     .filter((oneCharacter) => {
       return houseFilter === "All" ? true : oneCharacter.house === houseFilter;
@@ -62,6 +61,15 @@ function App() {
           .toLowerCase()
           .includes(textFilter.toLowerCase());
       }
+    })
+    .sort((a, b) => {
+      if (a.name > b.name) {
+        return 1;
+      }
+      if (a.name < b.name) {
+        return -1;
+      }
+      return 0;
     });
 
   //RETURN Y RUTAS
