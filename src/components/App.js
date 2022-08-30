@@ -4,6 +4,7 @@ import "../styles/App.scss";
 import { matchPath, Route, Routes, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import getFromApi from "../services/api.js";
+
 //Componentes
 import CharacterList from "./CharacterList";
 import Filters from "./Filters";
@@ -31,20 +32,15 @@ function App() {
   const dataPath = matchPath("/detail/:id", pathname);
   const characterId = dataPath !== null ? dataPath.params.id : null;
   const characterFound = characters.find((oneCharacter) => {
-    return characterId === oneCharacter.id;
+    if (characterId === oneCharacter.id) {
+      return characterId === oneCharacter.id;
+    } else {
+      return console.log(oneCharacter.id);
+    }
   });
 
   /*búscame en el listado completo el personaje que tenga el mismo id que characterId
   donde characterId es el id del personaje clicado por la usuaria (el que sale en la ruta)*/
-
-  //URL compartible
-  const getDetail = () => {
-    if (characterFound) {
-      return characterFound;
-    } else {
-      return {};
-    }
-  }; //no sale :(
 
   //RELACIONADAS CON LIFTING
   const handleFilterByHouse = (value) => {
@@ -106,7 +102,7 @@ function App() {
         />
         <Route
           path="/detail/:id"
-          element={<CharacterDetail characterFound={getDetail()} />}
+          element={<CharacterDetail characterFound={characterFound} />}
         />
       </Routes>
     </div>

@@ -2,10 +2,6 @@ import CharacterItem from "./CharacterItem";
 
 function CharacterList(props) {
   //html a renderizar
-  /*const theList = props.characters.map((item, index) => {
-    return <CharacterItem key={index} characters={item} />;
-  });*/
-  //si no hay coincidencias
   const drawList = () => {
     if (props.characters.length === 0) {
       return <p>Without coincidences!</p>;
