@@ -5,7 +5,7 @@ function CharacterList(props) {
   //html a renderizar
   const drawList = () => {
     if (props.characters.length === 0) {
-      return <p>Without coincidences!</p>;
+      return <p className="list__text">Without coincidences!</p>;
     } else {
       return props.characters.map((item) => {
         console.log(item.id);

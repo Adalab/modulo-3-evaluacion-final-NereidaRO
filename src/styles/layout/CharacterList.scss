@@ -8,6 +8,11 @@
         justify-items: center;
         gap: 0.5%;
     }
+
+    &__text{
+        color: $color-letter;
+        font-size: $subtitle-size;
+    }
 }
 
 @media all and (min-width:768px){
