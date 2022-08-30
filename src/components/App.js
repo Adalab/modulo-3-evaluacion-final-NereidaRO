@@ -83,6 +83,7 @@ function App() {
           path="/"
           element={
             <>
+              <h1 className="list__title">Harry Potter</h1>
               <form className="form">
                 <ResetButton
                   setHouseFilter={setHouseFilter}

@@ -1,3 +1,4 @@
+import "../styles/layout/CharacterDetail.scss";
 import placeholder from "../images/enplaceholder.png";
 import chooseImage from "../services/chooseImage";
 import { NavLink } from "react-router-dom";

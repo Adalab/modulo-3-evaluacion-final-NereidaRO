@@ -1,3 +1,4 @@
+import "../styles/layout/CharacterList.scss";
 import CharacterItem from "./CharacterItem";
 
 function CharacterList(props) {
@@ -13,12 +14,7 @@ function CharacterList(props) {
     }
   };
   //la lista
-  return (
-    <>
-      <h1 className="list__title">Harry Potter</h1>
-      <ul className="list__list">{drawList()}</ul>
-    </>
-  );
+  return <ul className="list__list">{drawList()}</ul>;
 }
 
 export default CharacterList;

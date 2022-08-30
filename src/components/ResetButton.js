@@ -1,3 +1,4 @@
+import "../styles/layout/ResetButton.scss";
 function ResetButton(props) {
   const handleReset = (ev) => {
     ev.preventDefault();

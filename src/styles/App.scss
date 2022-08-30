@@ -1,0 +1,14 @@
+@import "../styles/core/global.scss";
+
+.App{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: $color-body;
+    margin: 0;
+}
+
+.list__title{
+    text-align: center;
+    font-size: $title-size; 
+    padding: $central-padding;
+    margin: 0;
+}

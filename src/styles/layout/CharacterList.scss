@@ -1,0 +1,23 @@
+@import "../core/global.scss";
+
+.list{
+    &__list{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: $central-padding;
+        justify-items: center;
+        gap: 0.5%;
+    }
+}
+
+@media all and (min-width:768px){
+    .list__list{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media all and (min-width:1020px){
+    .list__list{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

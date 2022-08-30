@@ -1,3 +1,4 @@
+import "../styles/layout/FilterByName.scss";
 function FilterByName(props) {
   const handleOnChange = (ev) => {
     return props.handleFilterByName(ev.target.value);

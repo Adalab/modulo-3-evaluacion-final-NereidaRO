@@ -1,3 +1,4 @@
+import "../styles/layout/FilterByHouse.scss";
 //filtro tipo select
 
 function FilterByHouse(props) {
