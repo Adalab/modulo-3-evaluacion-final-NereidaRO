@@ -15,8 +15,8 @@ function CharacterList(props) {
   //la lista
   return (
     <>
-      <h1>Harry Potter</h1>
-      <ul>{drawList()}</ul>
+      <h1 className="list__title">Harry Potter</h1>
+      <ul className="list__list">{drawList()}</ul>
     </>
   );
 }

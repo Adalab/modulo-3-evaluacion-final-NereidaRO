@@ -8,11 +8,11 @@ function CharacterItem(props) {
   //placeholder img => función importada de servicio porque se repite
 
   return (
-    <li>
-      <NavLink to={`/detail/${props.characters.id}`}>
+    <li className="item">
+      <NavLink className="item__link" to={`/detail/${props.characters.id}`}>
         {chooseImage(props.characters)}
-        <p>{props.characters.name}</p>
-        <p>{props.characters.species}</p>
+        <p className="item__text">{props.characters.name}</p>
+        <p className="item__text">{props.characters.species}</p>
       </NavLink>
     </li>
   );

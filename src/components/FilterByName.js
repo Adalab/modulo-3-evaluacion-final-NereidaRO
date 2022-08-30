@@ -13,8 +13,11 @@ function FilterByName(props) {
 
   return (
     <>
-      <label htmlFor="name">Search by name: </label>
+      <label className="fbn__label" htmlFor="name">
+        Search by name:{" "}
+      </label>
       <input
+        className="fbn__input"
         type="text"
         name="name"
         id="name"

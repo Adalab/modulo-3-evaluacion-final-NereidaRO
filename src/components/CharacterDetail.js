@@ -1,5 +1,6 @@
 import placeholder from "../images/enplaceholder.png";
 import chooseImage from "../services/chooseImage";
+import { NavLink } from "react-router-dom";
 
 function CharacterDetail(props) {
   console.log(props.characterFound);
@@ -16,16 +17,23 @@ function CharacterDetail(props) {
   //placeholder de la imagen => función en servicios
 
   return (
-    <section>
-      {chooseImage(props.characterFound)}
-      <article>
-        <p>Name: {props.characterFound.name}</p>
-        {isAlive()}
-        <p>Species: {props.characterFound.species}</p>
-        <p>Gender: {props.characterFound.gender}</p>
-        <p>House: {props.characterFound.house}</p>
-      </article>
-    </section>
+    <>
+      <NavLink className="detail__link" to="/">
+        Back
+      </NavLink>
+      <section className="detail__section">
+        {chooseImage(props.characterFound)}
+        <article className="detail__article">
+          <p className="detail__text">Name: {props.characterFound.name}</p>
+          {isAlive()}
+          <p className="detail__text">
+            Species: {props.characterFound.species}
+          </p>
+          <p className="detail__text">Gender: {props.characterFound.gender}</p>
+          <p className="detail__text">House: {props.characterFound.house}</p>
+        </article>
+      </section>
+    </>
   );
 }
 

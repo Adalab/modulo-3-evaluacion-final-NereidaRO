@@ -83,7 +83,7 @@ function App() {
           path="/"
           element={
             <>
-              <form>
+              <form className="form">
                 <ResetButton
                   setHouseFilter={setHouseFilter}
                   setTextFilter={setTextFilter}

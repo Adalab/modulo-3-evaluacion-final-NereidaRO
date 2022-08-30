@@ -4,7 +4,11 @@ function ResetButton(props) {
     props.setHouseFilter("Gryffindor");
     props.setTextFilter("");
   };
-  return <button onClick={handleReset}>Reset</button>;
+  return (
+    <button className="reset__button" onClick={handleReset}>
+      Reset
+    </button>
+  );
 }
 
 /*la idea es poner las VE de los filtros en su estado inicial, así que te las tiene que pasar App

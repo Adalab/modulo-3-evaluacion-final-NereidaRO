@@ -6,8 +6,11 @@ function FilterByHouse(props) {
   };
   return (
     <>
-      <label htmlFor="house">Choose a house: </label>
+      <label className="fbh__label" htmlFor="house">
+        Choose a house:{" "}
+      </label>
       <select
+        className="fbh__select"
         name="house"
         id="house"
         value={props.houseFilter}
