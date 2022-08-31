@@ -1,5 +1,6 @@
 import FilterByName from "./FilterByName.js";
 import FilterByHouse from "./FilterByHouse.js";
+import FilterBySpecies from "./FilterBySpecies.js";
 
 function Filters(props) {
   console.log(props);
@@ -14,6 +15,10 @@ function Filters(props) {
         characters={props.characters}
         houseFilter={props.houseFilter}
         handleFilterByHouse={props.handleFilterByHouse}
+      />
+      <FilterBySpecies
+        speciesFilter={props.speciesFilter}
+        handleFilterBySpecies={props.handleFilterBySpecies}
       />
     </>
   );

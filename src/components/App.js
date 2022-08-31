@@ -16,6 +16,7 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const [houseFilter, setHouseFilter] = useState("Gryffindor");
   const [textFilter, setTextFilter] = useState("");
+  const [speciesFilter, setSpeciesFilter] = useState("");
 
   //FUNCIONES AUXILIARES
 
@@ -51,6 +52,10 @@ function App() {
     setTextFilter(value);
   };
 
+  const handleFilterBySpecies = (value) => {
+    setSpeciesFilter(value);
+  };
+
   //APLICACIÓN DE FILTROS Y ORDEN ALFABÉTICO
   const filteredCharacters = characters
     .filter((oneCharacter) => {
@@ -63,6 +68,15 @@ function App() {
         return oneCharacter.name
           .toLowerCase()
           .includes(textFilter.toLowerCase());
+      }
+    })
+    .filter((oneCharacter) => {
+      if (speciesFilter.length === 0) {
+        return true;
+      } else {
+        return oneCharacter.species
+          .toLowerCase()
+          .includes(speciesFilter.toLowerCase());
       }
     })
     .sort((a, b) => {
@@ -95,6 +109,8 @@ function App() {
                   handleFilterByHouse={handleFilterByHouse}
                   textFilter={textFilter}
                   handleFilterByName={handleFilterByName}
+                  speciesFilter={speciesFilter}
+                  handleFilterBySpecies={handleFilterBySpecies}
                 />
               </form>
               <CharacterList characters={filteredCharacters} />
