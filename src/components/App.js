@@ -97,26 +97,32 @@ function App() {
           path="/"
           element={
             <>
-              <h1 className="list__title">Harry Potter</h1>
-              <form className="form">
-                <ResetButton
-                  setHouseFilter={setHouseFilter}
-                  setTextFilter={setTextFilter}
-                />
-                <Filters
-                  characters={characters}
-                  houseFilter={houseFilter}
-                  handleFilterByHouse={handleFilterByHouse}
-                  textFilter={textFilter}
-                  handleFilterByName={handleFilterByName}
-                  speciesFilter={speciesFilter}
-                  handleFilterBySpecies={handleFilterBySpecies}
-                />
-              </form>
-              <CharacterList characters={filteredCharacters} />
+              <header className="header">
+                <h1 className="list__title">Harry Potter</h1>
+              </header>
+              <main>
+                <form className="form">
+                  <ResetButton
+                    setHouseFilter={setHouseFilter}
+                    setTextFilter={setTextFilter}
+                  />
+                  <Filters
+                    characters={characters}
+                    houseFilter={houseFilter}
+                    handleFilterByHouse={handleFilterByHouse}
+                    textFilter={textFilter}
+                    handleFilterByName={handleFilterByName}
+                    speciesFilter={speciesFilter}
+                    handleFilterBySpecies={handleFilterBySpecies}
+                  />
+                </form>
+
+                <CharacterList characters={filteredCharacters} />
+              </main>
             </>
           }
         />
+
         <Route
           path="/detail/:id"
           element={<CharacterDetail characterFound={characterFound} />}

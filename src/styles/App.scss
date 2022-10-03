@@ -9,13 +9,16 @@
     margin: 0;
     height: 100%;
 }
+.header{
+    background-image: url("../images/hp-logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    min-height: 20vh;
+}
 
 .list__title{
-    text-align: center;
-    color: $color-letter;
-    font-size: $title-size; 
-    padding: $central-padding;
-    margin: 0;
+    display: none;
 }
 
 .form{
