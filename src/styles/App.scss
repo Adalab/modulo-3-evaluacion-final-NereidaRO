@@ -1,9 +1,11 @@
 @import "../styles/core/global.scss";
 
 .body{
-    //background-color: $color-body;
-    background: linear-gradient(to bottom, $color-body, white);
+    background-color: black;
+    background-image: url("../images/blue-smoke-rafael-guajardo.jpg");
     background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    background-attachment: fixed; //con esto parece que las tarjetas se deslizan
    
 }
 
@@ -13,7 +15,7 @@
     height: 100%;
 }
 .header{
-    background-image: url("../images/hp-logo.png");
+    background-image: url("../images/HP-TT.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;

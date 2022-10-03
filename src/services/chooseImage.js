@@ -23,6 +23,4 @@ const chooseImage = (characters) => {
   }
 };
 
-//aquí no se pone punto en los parámetros
-
 export default chooseImage;
