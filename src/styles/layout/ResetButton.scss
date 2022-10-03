@@ -4,9 +4,14 @@
     color: $color-letter;
     font-size: $text-size;
     font-weight: bold;
-    background-color: $color-body;
+    background-color: $color-card;
     border: solid 2px $color-card;
     border-radius: $radius;
     width: 80px;
     margin: $form-size;
+}
+
+.reset__button:hover{
+    background-color: $color-body;
+    border: solid 2px $color-body;
 }
