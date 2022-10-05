@@ -1,8 +1,7 @@
 @import "../styles/core/global.scss";
 
 .body{
-    background-color: black;
-    background-image: url("../images/blue-smoke-rafael-guajardo.jpg");
+   background: linear-gradient(to bottom, $color-card, black);
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
     background-attachment: fixed; //con esto parece que las tarjetas se deslizan
